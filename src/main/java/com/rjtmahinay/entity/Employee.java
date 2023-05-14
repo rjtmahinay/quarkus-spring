@@ -12,24 +12,33 @@
  * @author rjtmahinay
  * 2023
  */
-package com.rjtmahinay.controller;
+package com.rjtmahinay.entity;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.Optional;
+@Entity
+@Setter
+@Getter
+@Table(name = "EMPLOYEE")
+public class Employee {
 
-@RestController
-@RequestMapping("/v1/employee")
-public class EmployeeController {
+    @Id
+    @GeneratedValue
+    @Column(name = "ID", nullable = false, insertable = false, updatable = false)
+    private Long id;
 
-    @Value("${tristan.test}")
-    private String test;
+    @Column(name = "NAME")
+    private String name;
 
-    @GetMapping("/hello1")
-    public String hello() {
-        return test;
-    }
+    @Column(name = "ADDRESS")
+    private String address;
+
+    @Column(name = "POSITION")
+    private String position;
+
+    @Column(name = "SALARY")
+    private String salary;
+
 }

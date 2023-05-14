@@ -12,20 +12,7 @@
  * @author rjtmahinay
  * 2023
  */
-package com.rjtmahinay.model;
+package com.rjtmahinay.dto;
 
-import org.hibernate.annotations.GeneratorType;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "EMPLOYEE")
-public class Employee {
-
-    @Id
-    @GeneratedValue
-    private Long id;
+public record EmployeeDTO() {
 }
